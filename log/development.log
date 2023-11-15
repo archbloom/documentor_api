@@ -1,0 +1,497 @@
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-11-08 11:28:35.341603', '2023-11-08 11:28:35.341606') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-08 17:06:30 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/rently/.rvm/gems/ruby-3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/rently/.rvm/gems/ruby-3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | Allocations: 521)
+Completed 200 OK in 27ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 9137)
+
+
+Started POST "/base_api" for ::1 at 2023-11-08 17:09:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/base_api"):
+  
+Started POST "/api_base" for ::1 at 2023-11-08 17:09:31 +0530
+Processing by ApplicationController#base_api as */*
+Completed 204 No Content in 31026ms (ActiveRecord: 0.0ms | Allocations: 116344)
+
+
+Started POST "/api_base" for ::1 at 2023-11-08 17:11:16 +0530
+Processing by ApplicationController#base_api as */*
+  Parameters: {"hello"=>"world", "Screenshot from 2023-11-08 06-34-43.png"=>#<ActionDispatch::Http::UploadedFile:0x00007f66f80dd188 @tempfile=#<Tempfile:/tmp/RackMultipart20231108-19947-do04m7.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+Completed 204 No Content in 12430ms (ActiveRecord: 0.0ms | Allocations: 1767)
+
+
+Started POST "/api_base" for ::1 at 2023-11-08 17:11:36 +0530
+Processing by ApplicationController#base_api as */*
+  Parameters: {"hello"=>"world", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007f66fc014658 @tempfile=#<Tempfile:/tmp/RackMultipart20231108-19947-s9st56.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+Completed 204 No Content in 166428ms (ActiveRecord: 0.0ms | Allocations: 2909)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDocuments (20231108115114)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "documents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "s3_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231108115114') RETURNING "version"[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/documents" for ::1 at 2023-11-08 17:39:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x0000558408cd2580 @tempfile=#<Tempfile:/tmp/RackMultipart20231108-22054-m8fel1.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+Completed 204 No Content in 1553030ms (ActiveRecord: 1.1ms | Allocations: 347018)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 10:59:37 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x000055c4648a9de0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-to5j6q.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+Completed 204 No Content in 354976ms (ActiveRecord: 0.6ms | Allocations: 189562)
+
+
+Started GET "/documents" for ::1 at 2023-11-15 11:05:52 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0acd81ad88 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-8c0r7e.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 2.7ms | Allocations: 4851)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 11:06:28 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0ac00dcd30 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-xiv4ed.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+Completed 500 Internal Server Error in 991ms (ActiveRecord: 1.3ms | Allocations: 141508)
+
+
+  
+Aws::S3::Errors::AccessDenied (Access Denied):
+  
+app/controllers/documents_controller.rb:20:in `create'
+Started POST "/documents" for ::1 at 2023-11-15 11:10:24 +0530
+  
+LoadError (cannot load such file -- aws-sdk):
+  
+app/controllers/documents_controller.rb:2:in `<main>'
+Started POST "/documents" for ::1 at 2023-11-15 11:12:47 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0ab5484b50 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-c7xblf.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+Completed 500 Internal Server Error in 1210ms (ActiveRecord: 1.3ms | Allocations: 7032)
+
+
+  
+Aws::S3::Errors::AccessDenied (Access Denied):
+  
+app/controllers/documents_controller.rb:20:in `create'
+Started POST "/documents" for ::1 at 2023-11-15 11:15:13 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0abc428150 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-pvv2b6.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:24:in `create'
+  [1m[36mDocument Create (10.6ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "world"], ["s3_url", "https://s3.amazonaws.com/rently-kingsmen-dev/Screenshot from 2023-11-08 06-34-43.png"], ["created_at", "2023-11-15 05:45:14.937350"], ["updated_at", "2023-11-15 05:45:14.937350"]]
+  ↳ app/controllers/documents_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (28.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:24:in `create'
+Completed 201 Created in 1747ms (Views: 1.4ms | ActiveRecord: 40.9ms | Allocations: 9573)
+
+
+Started GET "/documents" for ::1 at 2023-11-15 11:15:26 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0ac0366218 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-tvbmq7.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 876)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 11:15:34 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0ab54f2790 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-sw8558.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:24:in `create'
+  [1m[36mDocument Create (3.0ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", "world"], ["s3_url", "https://s3.amazonaws.com/rently-kingsmen-dev/Screenshot from 2023-11-08 06-34-43.png"], ["created_at", "2023-11-15 05:45:36.488573"], ["updated_at", "2023-11-15 05:45:36.488573"]]
+  ↳ app/controllers/documents_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:24:in `create'
+Completed 201 Created in 1697ms (Views: 1.0ms | ActiveRecord: 3.4ms | Allocations: 5184)
+
+
+Started GET "/documents" for ::1 at 2023-11-15 11:15:41 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f0ab837ff40 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24966-hksmzt.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 778)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 11:34:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f93790b3fd8 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-28937-tvmkgg.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (0.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 06:04:28.920610"], ["updated_at", "2023-11-15 06:04:28.920610"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 1.4ms | Allocations: 105370)
+
+
+  
+RedisClient::CannotConnectError (Connection refused - connect(2) for 127.0.0.1:6379):
+  
+Started POST "/documents" for ::1 at 2023-11-15 12:33:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f76fd132e20 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-16830-xs6fho.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (0.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:03:01.997527"], ["updated_at", "2023-11-15 07:03:01.997527"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+Completed 201 Created in 70ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 105394)
+
+
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/sidekiq/s3_uploader_worker.rb:11:in `rescue in perform'
+Started GET "/documents" for ::1 at 2023-11-15 12:33:59 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f7715aa8c58 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-16830-9amzmg.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 1.3ms | Allocations: 6588)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 12:34:06 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f7715b88948 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-16830-qiexid.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (0.8ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:04:06.505818"], ["updated_at", "2023-11-15 07:04:06.505818"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 19259ms (ActiveRecord: 5.9ms | Allocations: 226801)
+
+
+  
+ArgumentError (Job arguments to S3UploaderWorker must be native JSON types, but #<ActionDispatch::Http::UploadedFile:0x00007f7715b88948 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-16830-qiexid.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n"> is a ActionDispatch::Http::UploadedFile.
+See https://github.com/sidekiq/sidekiq/wiki/Best-Practices
+To disable this error, add `Sidekiq.strict_args!(false)` to your initializer.
+):
+  
+app/controllers/documents_controller.rb:19:in `create'
+Started POST "/documents" for ::1 at 2023-11-15 12:42:33 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b109b9f8 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-kbvdmj.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (0.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:12:33.936001"], ["updated_at", "2023-11-15 07:12:33.936001"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+Completed 201 Created in 64ms (Views: 0.2ms | ActiveRecord: 7.2ms | Allocations: 105436)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 12:45:02 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b0f199e0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-gqpn0i.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (1.1ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:15:02.312260"], ["updated_at", "2023-11-15 07:15:02.312260"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 7.2ms | Allocations: 7800)
+
+
+  
+NameError (undefined local variable or method `document' for #<DocumentsController:0x00000000011aa8>
+Did you mean?  @document):
+  
+app/controllers/documents_controller.rb:18:in `create'
+Started POST "/documents" for ::1 at 2023-11-15 12:45:38 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b42a2fa0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-9osftc.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (0.8ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:15:38.130807"], ["updated_at", "2023-11-15 07:15:38.130807"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 7.6ms | Allocations: 7689)
+
+
+  
+NameError (undefined local variable or method `filename' for #<DocumentsController:0x00000000015428>):
+  
+app/controllers/documents_controller.rb:20:in `create'
+Started POST "/documents" for ::1 at 2023-11-15 12:46:45 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b09d51a0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-b5reph.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (1.2ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:16:45.645839"], ["updated_at", "2023-11-15 07:16:45.645839"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+  [1m[36mDocument Update (0.8ms)[0m  [1m[33mUPDATE "documents" SET "name" = ?, "s3_url" = ?, "updated_at" = ? WHERE "documents"."id" = ?[0m  [["name", "world hello"], ["s3_url", "https://s3.amazonaws.com/rently-kingsmen-dev/Screenshot from 2023-11-08 06-34-43.png"], ["updated_at", "2023-11-15 07:16:45.655104"], ["id", 9]]
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+Completed 201 Created in 23ms (Views: 0.6ms | ActiveRecord: 9.1ms | Allocations: 10177)
+
+
+Started GET "/documents" for ::1 at 2023-11-15 12:46:57 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b0baaa70 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-9szytv.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1506)
+
+
+Started DELETE "/documents/9" for ::1 at 2023-11-15 12:52:26 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77c99c1e70 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-vd8wsr.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">, "id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE (9) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+  [1m[36mDocument Destroy (2.2ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+Completed 204 No Content in 1242ms (Views: 0.7ms | ActiveRecord: 17.8ms | Allocations: 143375)
+
+
+Started GET "/documents/" for ::1 at 2023-11-15 12:52:55 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b42a9ad0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-m8c0ze.png>, @content_type="image/png", @original_filename="Screenshot from 2023-11-08 06-34-43.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"Screenshot from 2023-11-08 06-34-43.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 1246)
+
+
+Started DELETE "/documents/9" for ::1 at 2023-11-15 12:54:22 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE (9) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+  [1m[36mDocument Destroy (2.6ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+Completed 204 No Content in 1251ms (Views: 0.5ms | ActiveRecord: 17.7ms | Allocations: 8909)
+
+
+Started GET "/documents/9" for ::1 at 2023-11-15 12:54:44 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE (9) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 724)
+
+
+Started GET "/documents/9" for ::1 at 2023-11-15 12:55:42 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE (9) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+  [1m[36mCACHE Document Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE (9) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `show'
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ (byebug):1:in `show'
+Completed 200 OK in 42274ms (Views: 0.8ms | ActiveRecord: 1.9ms | Allocations: 232652)
+
+
+Started GET "/documents/9" for ::1 at 2023-11-15 12:57:15 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+Completed 200 OK in 3649ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 9355)
+
+
+Started DELETE "/documents/9" for ::1 at 2023-11-15 12:57:26 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:42:in `destroy'
+  [1m[36mDocument Destroy (2.7ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/documents_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:42:in `destroy'
+Completed 204 No Content in 1113ms (Views: 0.4ms | ActiveRecord: 16.2ms | Allocations: 6631)
+
+
+Started DELETE "/documents/9" for ::1 at 2023-11-15 12:57:50 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:39:in `destroy'
+Completed 204 No Content in 12016ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 6707)
+
+
+Started DELETE "/documents/7" for ::1 at 2023-11-15 12:58:13 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:39:in `destroy'
+Completed 500 Internal Server Error in 7552ms (ActiveRecord: 0.2ms | Allocations: 15413)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/models/document.rb:10:in `remove_from_s3'
+app/controllers/documents_controller.rb:43:in `destroy'
+Started DELETE "/documents/7" for ::1 at 2023-11-15 12:58:40 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:43:in `destroy'
+  [1m[36mDocument Destroy (2.7ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/documents_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:43:in `destroy'
+Completed 204 No Content in 3929ms (Views: 0.5ms | ActiveRecord: 10.6ms | Allocations: 16103)
+
+
+Started GET "/documents/7" for ::1 at 2023-11-15 12:58:52 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+Completed 204 No Content in 4246ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 5165)
+
+
+Started GET "/documents/1" for ::1 at 2023-11-15 12:59:04 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+Completed 204 No Content in 1973ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 5168)
+
+
+Started GET "/documents/1" for ::1 at 2023-11-15 12:59:12 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+Completed 204 No Content in 11426ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 5479)
+
+
+Started GET "/documents/" for ::1 at 2023-11-15 12:59:28 +0530
+Processing by DocumentsController#index as */*
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1047)
+
+
+Started GET "/documents/5" for ::1 at 2023-11-15 12:59:40 +0530
+Processing by DocumentsController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:31:in `show'
+Completed 200 OK in 3386ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 5462)
+
+
+Started DELETE "/documents/5" for ::1 at 2023-11-15 12:59:51 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:43:in `destroy'
+  [1m[36mDocument Destroy (2.8ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/documents_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:43:in `destroy'
+Completed 204 No Content in 7331ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 12546)
+
+
+Started DELETE "/documents/5" for ::1 at 2023-11-15 13:00:30 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mDocument Load (0.1ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:39:in `destroy'
+Completed 200 OK in 2900ms (Views: 0.8ms | ActiveRecord: 1.2ms | Allocations: 7061)
+
+
+Started POST "/documents/5" for ::1 at 2023-11-15 13:01:39 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/documents/5"):
+  
+Started POST "/documents" for ::1 at 2023-11-15 13:01:54 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77c9600bb0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-3m2mcd.png>, @content_type="image/png", @original_filename="rently_logo_large.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"rently_logo_large.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (0.8ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:31:54.121876"], ["updated_at", "2023-11-15 07:31:54.121876"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (16.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+  [1m[36mDocument Update (3.1ms)[0m  [1m[33mUPDATE "documents" SET "name" = ?, "s3_url" = ?, "updated_at" = ? WHERE "documents"."id" = ?[0m  [["name", "world hello"], ["s3_url", "https://s3.amazonaws.com/rently-kingsmen-dev/rently_logo_large.png"], ["updated_at", "2023-11-15 07:31:54.148283"], ["id", 10]]
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+Completed 201 Created in 43ms (Views: 1.2ms | ActiveRecord: 22.4ms | Allocations: 8033)
+
+
+Started GET "/documents" for ::1 at 2023-11-15 13:02:04 +0530
+Processing by DocumentsController#index as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77b0819168 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-dc8p25.png>, @content_type="image/png", @original_filename="rently_logo_large.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"rently_logo_large.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents"[0m
+  ↳ app/controllers/documents_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1098)
+
+
+Started DELETE "/documents/10" for ::1 at 2023-11-15 13:04:43 +0530
+Processing by DocumentsController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mDocument Load (0.3ms)[0m  [1m[34mSELECT "documents".* FROM "documents" WHERE "documents"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/documents_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+  [1m[36mDocument Destroy (4.7ms)[0m  [1m[31mDELETE FROM "documents" WHERE "documents"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:41:in `destroy'
+Completed 200 OK in 18274ms (Views: 0.6ms | ActiveRecord: 19.8ms | Allocations: 14069)
+
+
+Started POST "/documents" for ::1 at 2023-11-15 13:05:42 +0530
+Processing by DocumentsController#create as */*
+  Parameters: {"name"=>"world hello", "document"=>#<ActionDispatch::Http::UploadedFile:0x00007f77980201e0 @tempfile=#<Tempfile:/tmp/RackMultipart20231115-24947-w9cugf.png>, @content_type="image/png", @original_filename="rently_logo_large.png", @headers="Content-Disposition: form-data; name=\"document\"; filename=\"rently_logo_large.png\"\r\nContent-Type: image/png\r\n">}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mDocument Create (1.9ms)[0m  [1m[32mINSERT INTO "documents" ("name", "s3_url", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["name", nil], ["s3_url", nil], ["created_at", "2023-11-15 07:35:42.295367"], ["updated_at", "2023-11-15 07:35:42.295367"]]
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+  [1m[36mDocument Update (1.0ms)[0m  [1m[33mUPDATE "documents" SET "name" = ?, "s3_url" = ?, "updated_at" = ? WHERE "documents"."id" = ?[0m  [["name", "world hello"], ["s3_url", "https://s3.amazonaws.com/rently-kingsmen-dev/rently_logo_large.png"], ["updated_at", "2023-11-15 07:35:42.316243"], ["id", 11]]
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/documents_controller.rb:23:in `create'
+Completed 201 Created in 24ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 7316)
+
+
+  [1m[36mDocument Load (0.2ms)[0m  [1m[34mSELECT "documents".* FROM "documents" ORDER BY "documents"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
