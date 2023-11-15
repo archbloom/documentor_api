@@ -1,24 +1,8 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Routes
+GET /documents -> to list the documents
+GET /documents/:id -> to show the perticular document
+DELETE /documents/:id -> to delete a document
+POST /documents -> upload the documents
+  params:
+    name: name of the document
+    document: file
