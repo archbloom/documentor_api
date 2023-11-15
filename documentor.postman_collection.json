@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "26437978-a2f6-4ae1-86f6-770aaa4651e7",
+		"name": "documentor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14203089",
+		"_collection_link": "https://rently.postman.co/workspace/Renters-Journey~4832683a-6fb9-4747-81d0-72a0055b0cc5/collection/14203089-26437978-a2f6-4ae1-86f6-770aaa4651e7?action=share&source=collection_link&creator=14203089"
+	},
+	"item": [
+		{
+			"name": "POST create and upload the document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "world hello",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/home/rently/Pictures/rently_logo_large.png"
+						}
+					]
+				},
+				"url": "localhost:3090/documents"
+			},
+			"response": [
+				{
+					"name": "POST create and upload the document",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3090/documents"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"4121868122836e34c0d38c00a43798d9\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "cdc6691d-3930-41c0-bd67-7f4c03af2349"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.056868"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=1.04, instantiation.active_record;dur=2.33, process_action.action_controller;dur=5.97"
+						},
+						{
+							"key": "Content-Length",
+							"value": "650"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T06:04:28.920Z\",\n        \"updated_at\": \"2023-11-15T06:04:28.920Z\"\n    },\n    {\n        \"id\": 4,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T07:03:01.997Z\",\n        \"updated_at\": \"2023-11-15T07:03:01.997Z\"\n    },\n    {\n        \"id\": 6,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T07:12:33.936Z\",\n        \"updated_at\": \"2023-11-15T07:12:33.936Z\"\n    },\n    {\n        \"id\": 8,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T07:15:38.130Z\",\n        \"updated_at\": \"2023-11-15T07:15:38.130Z\"\n    },\n    {\n        \"id\": 11,\n        \"name\": \"world hello\",\n        \"s3_url\": \"https://s3.amazonaws.com/rently-kingsmen-dev/rently_logo_large.png\",\n        \"created_at\": \"2023-11-15T07:35:42.295Z\",\n        \"updated_at\": \"2023-11-15T07:35:42.316Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET list of documents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3090/documents"
+			},
+			"response": [
+				{
+					"name": "GET list of documents",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3090/documents"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"400673f5c0a66943ae0bcfda1a589790\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "7b814db8-6c1a-4a69-b8df-067b4b2ab17b"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.003553"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=0.08, instantiation.active_record;dur=0.06, process_action.action_controller;dur=1.64"
+						},
+						{
+							"key": "Content-Length",
+							"value": "535"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T06:04:28.920Z\",\n        \"updated_at\": \"2023-11-15T06:04:28.920Z\"\n    },\n    {\n        \"id\": 6,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T07:12:33.936Z\",\n        \"updated_at\": \"2023-11-15T07:12:33.936Z\"\n    },\n    {\n        \"id\": 8,\n        \"name\": null,\n        \"s3_url\": null,\n        \"created_at\": \"2023-11-15T07:15:38.130Z\",\n        \"updated_at\": \"2023-11-15T07:15:38.130Z\"\n    },\n    {\n        \"id\": 11,\n        \"name\": \"world hello\",\n        \"s3_url\": \"https://s3.amazonaws.com/rently-kingsmen-dev/rently_logo_large.png\",\n        \"created_at\": \"2023-11-15T07:35:42.295Z\",\n        \"updated_at\": \"2023-11-15T07:35:42.316Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET Show a document",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3090/documents/4"
+			},
+			"response": [
+				{
+					"name": "GET Show a document",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3090/documents/6"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"d25877f0abb3172f5e8b34d1cc6ffe82\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "c6cdaa3c-1134-4f7c-a4dd-e8447c66268d"
+						},
+						{
+							"key": "x-runtime",
+							"value": "0.002837"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=0.06, instantiation.active_record;dur=0.04, process_action.action_controller;dur=1.07"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"name\": null,\n    \"s3_url\": null,\n    \"created_at\": \"2023-11-15T07:12:33.936Z\",\n    \"updated_at\": \"2023-11-15T07:12:33.936Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE delete a document",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:3090/documents/4"
+			},
+			"response": [
+				{
+					"name": "DELETE delete a document",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3090/documents/4"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "0"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-permitted-cross-domain-policies",
+							"value": "none"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "vary",
+							"value": "Accept"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"e30c3e80f8890009f3564e2d01c3fe1b\""
+						},
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "x-request-id",
+							"value": "744ea7bb-6415-4f47-a8e6-f7f6817887cd"
+						},
+						{
+							"key": "x-runtime",
+							"value": "11.731965"
+						},
+						{
+							"key": "server-timing",
+							"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=10.77, instantiation.active_record;dur=0.04, transaction.active_record;dur=11.05, process_action.action_controller;dur=11729.57"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Document deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
